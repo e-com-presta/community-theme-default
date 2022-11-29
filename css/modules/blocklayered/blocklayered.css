@@ -112,3 +112,28 @@ ul.layered_filter_ul {
 .layered_filter label {
   font-weight: normal;
 }
+
+.layered_block_title {
+    position: relative;
+    display: block;
+}
+.layered_block_title[aria-expanded="false"]:after {
+    display: block;
+    font-family: "FontAwesome";
+    content: "\f0fe";
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 26px;
+    cursor: pointer;
+}
+.layered_block_title[aria-expanded="true"]:after {
+    display: block;
+    font-family: "FontAwesome";
+    content: "\f146";
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 26px;
+    cursor: pointer;
+}
