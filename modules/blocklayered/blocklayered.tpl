@@ -1,9 +1,14 @@
 {if $nbr_filterBlocks != 0}
+    {if Context::getContext()->isMobile() && !Context::getContext()->isTablet()}
+        {assign var='isMobile' value='true'}
+    {/if}
     <section>
         <nav>
             <div id="layered_block_left" class="block">
-                <h2 class="title_block section-title-column">{l s='Catalog' mod='blocklayered'}</h2>
-                <div class="block_content">
+                <a class="layered_block_title" href="#layered_collapse" data-toggle="collapse" aria-expanded="{if isset($isMobile)}false{else}true{/if}">
+                    <h2 class="title_block section-title-column">{l s='Catalog' mod='blocklayered'}</h2>
+                </a>
+                <div id="layered_collapse" class="block_content collapse {if !isset($isMobile)}in{/if}">
                     <form action="#" id="layered_form">
                         <div>
                             {if isset($selected_filters) && $n_filters > 0}
